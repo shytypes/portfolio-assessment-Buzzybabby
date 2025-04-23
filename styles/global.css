@@ -1,10 +1,198 @@
-/* remove default browser spacing*/
+/* remove default browser spacing */
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in-out; /* smooth transitions for all elements */
 }
 
-/*title text style*/
-/* the font-family 'JetBrains Mono', has been linked
- * and is available for your use
- * */
+/* base body styling */
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: #000000; /* completely black */
+  color: #d6b3ff; /* soft purple for base text */
+  line-height: 1.6;
+  padding: 20px;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* title text style */
+main h1 {
+  font-size: 3rem;
+  color: #bf00ff; /* bright purple */
+  margin-bottom: 1rem;
+  text-align: center;
+  animation: textFadeIn 1.5s ease-in-out; /* Fade in title text */
+  transition: transform 0.3s ease, color 0.3s ease; /* Make text interactive */
+}
+
+main h1:hover {
+  transform: scale(1.1); /* Slightly grow the title text */
+  color: #ff66ff; /* Change color on hover */
+}
+
+/* header navigation styles (first header) */
+header {
+  background-color: #1a001a; /* very dark purple */
+  padding: 1rem 2rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  animation: slideIn 1s ease-out; /* Header sliding in animation */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth header interaction */
+}
+
+header:hover {
+  transform: scale(1.05); /* Slightly scale the header on hover */
+  background-color: #2e003e; /* Change background color on hover */
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+header nav ul li a {
+  color: #e0b3ff; /* light purple */
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, color 0.3s ease; /* Scaling and color transition */
+}
+
+header nav ul li a:hover {
+  color: #ff66ff; /* hover purple-pink */
+  transform: scale(1.1); /* Slightly grow the link on hover */
+}
+
+/* sections */
+section {
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeInUp 1s forwards; /* Fade-in effect for sections */
+}
+
+section:nth-child(even) {
+  animation-delay: 0.5s; /* Stagger the fade-in for even sections */
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #cc66ff; /* purple shade */
+  margin-bottom: 0.75rem;
+  transition: transform 0.3s ease, color 0.3s ease; /* Interactive text effect */
+}
+
+h2:hover {
+  transform: scale(1.05); /* Slightly grow on hover */
+  color: #ff80ff; /* Change color on hover */
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: #d9a0ff; /* soft purple */
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease, color 0.3s ease; /* Interactive text effect */
+}
+
+h3:hover {
+  transform: scale(1.05); /* Slightly grow on hover */
+  color: #ff80ff; /* Change color on hover */
+}
+
+/* project cards */
+.project {
+  background-color: #1a001a; /* dark purple card */
+  padding: 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0px 2px 6px rgba(255, 255, 255, 0.05); /* light shadow */
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: scale(1.05); /* Slightly scale up on hover */
+  box-shadow: 0px 10px 20px rgba(255, 255, 255, 0.1); /* More pronounced shadow on hover */
+}
+
+/* links */
+a {
+  color: #a64dff; /* purple */
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #ff80ff;
+  transform: scale(1.1); /* Slightly grow the link on hover */
+}
+
+/* footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  color: #b399ff; /* muted purple */
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
+  animation: footerMove 1.5s ease-out; /* Footer animation */
+}
+
+/* responsive tweaks */
+@media (max-width: 600px) {
+  header nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Animations */
+@keyframes textFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes footerMove {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
