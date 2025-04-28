@@ -1,10 +1,130 @@
-/* remove default browser spacing*/
+/* reset and global */
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  scroll-behavior: smooth;
 }
 
-/*title text style*/
-/* the font-family 'JetBrains Mono', has been linked
- * and is available for your use
- * */
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background: #000;
+  color: #d6b3ff;
+  font-size: 0.9rem; /* Reduced from 1rem */
+  line-height: 1.5;
+  padding: 10px;
+  overflow-x: hidden;
+  font-weight: 500;
+}
+
+/* HEADER: Bolder & Brighter */
+header {
+  background: #2b0040;
+  padding: 1.1rem;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #8a00cc;
+  font-weight: 900;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.1rem;
+  list-style: none;
+}
+
+header nav ul li a {
+  font-size: 0.9rem; /* Reduced from 1rem */
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  background-color: #4d0073;
+}
+
+header nav ul li a:hover {
+  background-color: #bf00ff;
+  color: #fff;
+}
+
+/* HEADINGS */
+h1, h2, h3 {
+  font-weight: 800;
+  display: inline-block;
+}
+
+h1 {
+  font-size: 1.7rem; /* Reduced from 2rem */
+  color: #bf00ff;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.2rem; /* Reduced from 1.4rem */
+  color: #cc66ff;
+  margin-bottom: 0.4rem;
+}
+
+h3 {
+  font-size: 1rem; /* Reduced from 1.1rem */
+  color: #d9a0ff;
+  margin-bottom: 0.4rem;
+}
+
+/* Paragraphs */
+section p {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem; /* Slightly reduced */
+  font-weight: 500;
+}
+
+/* Links */
+a {
+  color: #a64dff;
+  font-size: 0.9rem; /* Reduced from 1rem */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #ff80ff;
+}
+
+/* Footer */
+footer {
+  font-size: 0.8rem; /* Reduced from 0.9rem */
+  color: #b399ff;
+  text-align: center;
+  padding: 0.6rem 0;
+  border-top: 1px solid #333;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header nav ul {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  h3 {
+    font-size: 0.95rem;
+  }
+}
